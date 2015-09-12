@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+/* Styles the grey board background */
+	div#memory_board{
+		background: #CCC;
+		border: #999 1px solid;
+		width: 800px;
+		height: 540px;
+		padding: 24px;
+		margin: 0px auto;
+	}
+/* Styles the individual tiles
+   Makes them square with a jpg background, border, margin and padding, cursor as pointer, and floats left.	
+*/
+	div#memory_board > div{
+		background: url(tile_bg.jpg, no-repeat;);
+		border: #000 1px solid;
+		width: 71px;
+		height: 71px;
+		float: left;
+		margin: 10px;
+		padding: 20px;
+		font-size: 64px;
+		cursor: pointer;
+		text-align: center;
+	}
+</style>
+
+
+
+
+
+<script type="text/javascript">
+/* Array holds all tiles which are letters*/
+var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+/* Array will store short term memory */
+var memory_values = [];
+/* Array will store ___*/
+var memory_tile_ids = [];
+/* Stores amount of current tiles flipped */
+var tiles_flipped = 0;
+
+/* Creates a shuffle method */
+Array.prototype.memory_tile_shuffle = function(){
+	var i = this.length, j, temp;
+	while (--i > 0){
+		j = Math.floor(Math.random() * (i+1));
+		temp = this[j];
+		this[j] = this[i];
+		this[i] = temp;
+	}
+}
+
+/* Creates a new board*/
+function newBoard(){
+	/* Resets Array*/
+	tiles_flipped = 0;
+	/* Will be used to hold new divs */
+	var output = '';
+	/* Shuffles array holding tiles */
+    memory_array.memory_tile_shuffle();
+    /* For when i is less than the length of the tile array it increases by 1 and adds to output a div with each array value and a function which onclick will perform a new function which takes the argument of this as in the clicked div and the memory array value of the clicked div.*/
+	for(var i = 0; i < memory_array.length; i++){
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+	}
+	/* Writes output as the inner html of the memory_board*/
+	document.getElementById('memory_board').innerHTML = output;
+}
+
+//Flipping function which recieves the tile and value onclick
+function memoryFlipTile(tile,val){
+	/*if the tile hasn't been flipped and the short term memory array has less than 2 we will flip the tile by adding a white background and setting the inner HTML to the value captured.*/
+	if(tile.innerHTML == "" && memory_values.length < 2){
+		tile.style.background = '#FFF';
+		tile.innerHTML = val;
+		/* If this is the first card being flipped in the short term memory array add it's value and it's id to the arrays.*/
+		if(memory_values.length == 0){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+			/* If it's the second card being flipepd in the short term memory push the value and id then check to see if they match. If so reset the arrays to empty, and 2 to the amount of flipped tiles.  */
+		} else if(memory_values.length == 1){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+			if(memory_values[0] == memory_values[1]){
+				tiles_flipped += 2;
+				//Clears both arrays
+				memory_values = [];
+				memory_tile_ids = [];
+				//Checks to see if whole board is cleared
+				if(tiles_flipped == memory_array.length){
+					alert("Board cleared... generating new board");
+					document.getElementById('memory_board').innerHTML= "";
+					newBoard();
+				}
+				//If not a match
+			} else {
+				function flip2Back(){
+				    // Flip the 2 tiles back over by resetting background and empty value.
+				    var tile_1 = document.getElementById(memory_tile_ids[0]);
+				    var tile_2 = document.getElementById(memory_tile_ids[1]);
+				    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
+            	    tile_1.innerHTML = "";
+				    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
+            	    tile_2.innerHTML = "";
+				    // Clear both arrays
+				    memory_values = [];
+            	    memory_tile_ids = [];
+				}
+				setTimeout(flip2Back, 700);
+			}
+		}
+	}
+}
+</script>
+
+
+</head>
+<body>
+	<div id="memory_board"></div>
+	<script type="text/javascript"> newBoard(); </script>
+</body>
+</html>

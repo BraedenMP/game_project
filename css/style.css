@@ -1,0 +1,398 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font: 1em/1.5, Arial;
+
+}
+
+h1{
+	font-size: 5.625rem;
+	font-weight: normal;
+	text-shadow: 2px 2px  8px #000;
+	line-height: 1.3;
+	font-family: 'Amaranth', sans-serif;
+	color: #f38630;
+	max-width: 80%;
+	display: block;
+	margin: auto;
+}
+
+.page{
+	background: linear-gradient(0deg, #fff, #c2b280 10%);
+}
+
+/* Main Styles */
+header {
+padding-bottom: 30%;
+padding-top: 10%;
+height: 20%;
+background:linear-gradient(#A7DBD8, transparent 90%),
+		   linear-gradient(0deg, #c2b280, transparent);
+background-size: cover;
+text-align: center;
+}
+
+.title {
+	color: #f38630;
+	font-size: 1.626em;
+	font-weight: bold;
+}
+
+.intro {
+	display: inline-block;
+	margin: auto;
+	font-size: 1.25em;
+	line-height: 1.6;
+}
+
+.mainContent {
+	padding-top: 25px;
+	padding-bottom: 95px;
+	width: 85%;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin: auto;
+	max-width: 85%;
+	font-family: 'Ramabhadra', sans-serif;
+}
+
+.arrow{
+	width: 50px;
+}
+
+.rules{
+	color: black;
+	font-weight: bold;
+	text-align: left;
+	padding: 1% 5% 5% 5%;
+	margin: auto;
+	margin-bottom: 5%;
+	display: block;
+	border-top: 10px solid #fa6900;
+	border-radius: 5%;
+	background:linear-gradient(#A7DBD8, transparent 60%),
+		   linear-gradient(0deg, #c2b280, transparent),
+		    #434a52 url('../img/car.jpg') no-repeat center; 
+	background-size: cover;
+	max-width: 85%;
+	box-shadow: 3px 2px 6px #222;
+	font-family: 'Ramabhadra', sans-serif;
+}
+
+h4 {
+	color: #f38630;
+	text-shadow: 1px 1px 1px #000;
+	font-family: 'Amaranth', sans-serif;
+	font-size: 2em;
+	margin-bottom: 4%;
+}
+
+.play{
+	text-align: center;
+	width: 100%; 
+	margin: 5% 2%;
+	padding: 5% 2%;
+	background: #eee;
+	box-shadow: inset 1px 1px 8.5px rgba(3,3,3, 10);
+}
+
+/* Button Design */
+
+.button {       
+    display: inline-block;
+    max-width: 90%;
+    white-space: nowrap;
+    background-color: #f38630;
+    background: linear-gradient(0deg, #eee, #f38630);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+    border: 1px solid #777;
+    padding: 0 1.5em;
+    margin: 0.5em;
+    font: bold 1em/2em Arial, Helvetica;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+    border-radius: .2em;
+    box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+}
+
+.button:hover {
+    background-color: #ddf;        
+    background: linear-gradient(0deg, #fafafa, #ddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');        
+}
+
+.button:active {
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+    position: relative;
+    top: 1px;
+}
+
+.button:focus {
+    outline: 0;
+    background: #fafafa;
+}    
+
+
+
+.prizes {
+	color: black;
+	font-weight: bold;
+	text-align: left;
+	padding: 1% 5% 5% 4%;
+	margin: auto;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	display: block;
+	border-top: 10px solid #fa6900;
+	border-radius: 5%;
+	background:linear-gradient(#A7DBD8, transparent 60%),
+		   linear-gradient(0deg, #c2b280, transparent),
+		    #434a52 url('../img/car.jpg') no-repeat center; 
+	background-size: cover;
+	max-width: 85%;
+	box-shadow: 3px 2px 4px #333;
+	font-family: 'Ramabhadra', sans-serif;
+	}
+
+.prizes ul{
+	list-style-type: none;
+
+}
+
+/* Contact Form and Game --------*/
+
+.boxes {
+	display: block;
+	margin: auto;
+	margin-top: 5%;
+	border-top: 10px solid #fa6900;
+	border-radius: 5%;
+	font-family: 'Ramabhadra', sans-serif; 
+	background: linear-gradient(0deg, #c2b280, #A7DBD8 95%);
+	padding: 0% 2% 2% 2%;
+	text-align: left;
+	box-shadow: 5px 5px 10px #333;
+	font-size: 1em;
+	max-width: 95%;
+}
+
+.boxes p{
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+input[type="text"] {
+	border: 1px solid #444;
+	display: block;
+	padding: 15px;
+	width: 100%;
+	height: auto;
+	margin-bottom: 1.2em;
+	border-radius: .3em;
+	border-bottom: 3px solid rgba(0,0,0 0.05);
+	box-shadow: 0 1px 0 rgba (0,0,0,0.03) inset;
+	
+}
+
+label {
+	font-family: 'Amaranth', sans-serif;
+	font-size: 1.2em; 
+	display: block;
+	margin-bottom: 0.5em;
+	margin-left: 0.25em;
+}
+
+.nowButton {
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.6em;
+  margin: 1em 0 0;
+  outline: none;
+  margin: 2% 2%;
+}
+
+div[class="gameBox"]{
+	border: solid 1px #222;
+	box-shadow: 3px 2px 4px #333 inset;
+	background: #ddd;
+	border-radius: 5px;
+	width: 15em;
+	height: 15em;
+	margin: auto;
+	margin-bottom: 2em;
+	max-width: 90%;
+	min-width: 80%;
+
+}
+
+
+div[class="gameBox"] div:hover{
+	border: solid 2px #c2b280;
+	box-shadow: 3px 2px 4px #c2b280;
+}
+
+
+input[type="submit"]:disabled{
+	background-color: #ff784f;
+}
+
+.gameBox > div{
+	border: solid 1px #222;
+	box-shadow: 3px 2px 4px #333;
+	display: inline-block;
+	padding: .05em;
+	margin-top: .5%;
+	margin-left: 10%;
+    margin-right: auto;
+    margin-bottom: auto;
+	background: url('../img/palm-tree-icon.png') no-repeat;
+	background-size: cover;
+	width: 35%;
+	height: 30%;
+	cursor: pointer;
+	text-align: center;
+	font-family:'Amaranth', sans-serif;
+	font-size: 1.5em; 
+	font-weight: bold;
+	color: #f38630;
+	text-shadow: 1px 1px 1px #000;
+
+}
+	}
+
+.gameBox:last-child{
+	float: right;
+}
+	
+.overlay {
+	display: none;
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+.overlay p{
+	font-family: 'Ramabhadra', sans-serif;
+}
+
+.overbox {
+	display: block;
+	margin: auto;
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+/* -------------------Media Queries-------------------*/
+
+
+@media only screen and (min-width: 600px){
+
+	.gameBox > div{
+		width: 26%;
+		height: 26%;
+		margin-left: 15%;
+	}
+
+	div[class="gameBox"]{
+	width: 17em;
+	height: 17em;
+	}
+}
+
+@media only screen and (min-width: 650px){
+
+.gameBox > div{
+		width: 22%;
+		height: 29%;
+		margin-left: 15%;
+	}
+
+.prizes{
+		text-align: center;
+	}
+
+}
+
+@media only screen and (min-width: 850px), only screen and (min-width: 750px) and (orentation:landscape){
+
+.overbox {
+	max-width: 60%
+}
+	.prizes, .rules{
+		max-width: 65%;
+	}
+
+	.content{
+		margin-left: 18%;
+		margin-right: 18%;
+		font-size: .9em;
+	}
+}
+
+@media only screen and (min-width: 900px){
+	.boxes{
+		max-width: 70%;
+	}
+
+@media only screen and (min-width: 1200px){
+
+	header{
+		background:linear-gradient(#A7DBD8, transparent 90%),
+		   linear-gradient(0deg, #c2b280, transparent),
+		   url('../img/beach-min.jpeg') no-repeat;
+		   background-size: cover;
+	}
+
+	.rules{
+		background:linear-gradient(#A7DBD8, transparent 60%),
+		   linear-gradient(0deg, #c2b280, transparent),
+		   url('../img/car.jpg') no-repeat; 
+		   background-size: cover;
+	}
+
+	.prizes{
+		background:linear-gradient(#A7DBD8, transparent 60%),
+		   linear-gradient(0deg, #c2b280, transparent),
+		   url('../img/resort.jpg') no-repeat;
+		   background-size: cover;
+	}
+
+	.boxes{
+		max-width: 70%;
+	}
+
+	.gameBox > div{
+		width: 20%;
+		height: 28%;
+		margin-left: 20%;
+	}
+
+	div[class="gameBox"]{
+		width: 20em;
+		height: 22em;
+		}
+
+	.overbox {
+		max-width: 50%
+	}
+
+	#infoBox {
+		padding: 0% 5% 5% 5%;
+	}
+	.prizes{
+		max-width: 50%;
+	}
+	.prizes li{
+		margin-top: 1em;
+	}
+}
+}
